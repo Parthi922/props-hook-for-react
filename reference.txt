@@ -1,0 +1,20 @@
+what is usecontext ?
+
+usecontext is a react hook for acccessing shared values across components without manually passing 
+props through each level.
+
+# Create a context
+
+import {createContext} from 'react';
+
+export const cartContext= createContext;
+# provide the Context 
+<cartContext.provider value={value}>
+ <child/>
+ <child/>
+ <child/>
+</cartContext.provider>
+
+ # consume the Context
+ import {cartContext} from "./cartContext";
+ const {cart} = useContext(cartContext);
